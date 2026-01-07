@@ -1,0 +1,25 @@
+{
+  "name": "render-deploy-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "concurrently": "^9.2.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "dependencies": {},
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.18.0"
+}
