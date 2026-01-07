@@ -1,0 +1,25 @@
+services:
+  # Backend API Server
+  - type: web
+    name: render-deploy-server
+    runtime: node
+    rootDir: apps/server
+    buildCommand: npm install -g bun && bun install
+    startCommand: bun run src/index.tsx
+    envVars:
+      - key: PORT
+        value: 3000
+
+  # Frontend Client
+  - type: web
+    name: render-deploy-client
+    runtime: node
+    rootDir: apps/client
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          name: render-deploy-server
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL

@@ -12,7 +12,8 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   useEffect(() => {
     (async () => {
-      const resp = await fetch("http://localhost:3000/products");
+      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+      const resp = await fetch(`${apiUrl}/products`);
       if (!resp.ok) console.error("Something went wrong!");
       const data = await resp.json();
       console.log(data);
