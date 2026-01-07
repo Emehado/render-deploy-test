@@ -16,9 +16,11 @@
     "react-dom": "^19.2.3",
     "react-router": "7.10.1"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-darwin-x64": "^4.55.1"
+  },
   "devDependencies": {
     "@react-router/dev": "7.10.1",
-    "@rollup/rollup-darwin-x64": "^4.55.1",
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "^22.19.3",
     "@types/react": "^19.2.7",
