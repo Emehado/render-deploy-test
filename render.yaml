@@ -1,3 +1,6 @@
+previewsEnabled: true
+previewsExpireAfterDays: 7
+
 services:
   # Backend API Server
   - type: web
@@ -6,10 +9,7 @@ services:
     rootDir: apps/server
     buildCommand: npm install -g bun && bun install
     startCommand: bun run src/index.tsx
-    envVars:
-      - key: PORT
-        value: 3000
-
+    
   # Frontend Client
   - type: web
     name: render-deploy-client
