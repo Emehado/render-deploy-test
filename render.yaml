@@ -10,6 +10,8 @@ services:
     rootDir: apps/server
     buildCommand: npm install -g bun && bun install
     startCommand: bun run src/index.tsx
+    envVars:
+      - fromGroup: app-env-vars  # This is your placeholder
     
   # Frontend Client
   - type: web

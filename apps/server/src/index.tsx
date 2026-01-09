@@ -1,13 +1,20 @@
+type Bindings = {
+  TEST_SECRET: string;
+};
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import View from "./html/index";
 
-const app = new Hono();
+const app = new Hono<{ Bindings: Bindings }>();
 
 app.use("*", cors());
 
 app.get("/", (c) => {
   return c.html(<View />);
+});
+
+app.get("/secret", (c) => {
+  return c.text(`Here is a secret: ${process.env.TEST_SECRET}`);
 });
 
 app.get("/try", (c) => {
