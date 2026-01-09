@@ -10,8 +10,6 @@ services:
     rootDir: apps/server
     buildCommand: npm install -g bun && bun install
     startCommand: bun run src/index.tsx
-    previews:
-      plan: free
     
   # Frontend Client
   - type: web
@@ -20,8 +18,6 @@ services:
     rootDir: apps/client
     buildCommand: npm install && npm run build
     startCommand: npm run start
-    previews:
-      plan: free
     envVars:
       - key: VITE_API_URL
         fromService:
