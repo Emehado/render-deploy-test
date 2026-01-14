@@ -14,7 +14,13 @@ app.get("/", (c) => {
 });
 
 app.get("/secret", (c) => {
-  return c.text(`Here is a secret: ${process.env.TEST_SECRET}`);
+  return c.json({
+    TEST_SECRET: process.env.TEST_SECRET,
+    DB_HOST: process.env.DB_HOST,
+    DB_PORT: process.env.DB_PORT,
+    DB_NAME: process.env.DB_NAME,
+    API_KEY: process.env.API_KEY,
+  });
 });
 
 app.get("/try", (c) => {
